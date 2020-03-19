@@ -12,7 +12,7 @@
         </div>
         
         <div class="col-lg-6 offset-lg-3">
-        <a href="/">Back to Questions</a>
+        <a href="{{ route('welcome.index') }}">Back to Questions</a>
         </div>
     </div>
 </div>
