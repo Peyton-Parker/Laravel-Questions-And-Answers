@@ -16,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'WelcomeController@index')->name('welcome.index');
 Route::post('/', 'WelcomeController@store')->name('welcome.store');
 
-//Route::get('/', 'WelcomeController@index');
-//Route::post('/questions', 'QuestionsController@store');
 Route::get('/questions/{id}', 'QuestionsController@show')->name('questions.show');
+Route::post('/questions/{id}/answers', 'QuestionsController@store')->name('questions.store');

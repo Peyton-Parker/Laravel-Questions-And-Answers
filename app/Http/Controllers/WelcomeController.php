@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\ExampleQuestion;
+use App\Answer;
 
 class WelcomeController extends Controller
 {
     public function index() {
         $questions = Question::orderBy('id', 'desc')->get();
+        $exampleQuestion = ExampleQuestion::all()->random();
+        $answers = Answer::all();
 
-        return view('welcome.index', ['questions' => $questions]);
+        return view('welcome.index', [
+            'questions' => $questions,
+            'exampleQuestion' => $exampleQuestion,
+            'answers' => $answers->toArray()
+        ]);
     }
     
     public function store() {
